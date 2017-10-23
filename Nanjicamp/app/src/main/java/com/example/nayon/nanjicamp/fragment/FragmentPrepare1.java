@@ -89,7 +89,7 @@ public class FragmentPrepare1 extends Fragment {
 
         // Set margin for pages as a negative number, so a part of next and
         // previous pages will be showed
-        mViewPager.setPageMargin(-500);
+        mViewPager.setPageMargin(-Manager.pageMargin);
 
         dotCount = mAdapter.getCount();
         dots = new ImageView[dotCount];
@@ -107,7 +107,7 @@ public class FragmentPrepare1 extends Fragment {
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                for(int i = 0; i<3;i++){
+                for (int i = 0; i < 3; i++) {
                     fragment = mAdapter.getRegisteredFragment(i);
                     fragment.videoView.setVisibility(View.VISIBLE);
                     fragment.videoView.setSeekTo(false);
@@ -124,13 +124,13 @@ public class FragmentPrepare1 extends Fragment {
                 /*get seleceted fragment*/
                 mCurrentPosition = position;
                 fragment = mAdapter.getRegisteredFragment(mCurrentPosition);
-                fragmentAfter = mAdapter.getRegisteredFragment(mCurrentPosition-1);
-                if(fragmentAfter!=null){
+                fragmentAfter = mAdapter.getRegisteredFragment(mCurrentPosition - 1);
+                if (fragmentAfter != null) {
                     //fragmentAfter.videoView.setSeekTo(true);
                     fragmentAfter.videoView.setVisibility(View.INVISIBLE);
                 }
-                fragmentBefore = mAdapter.getRegisteredFragment(mCurrentPosition+1);
-                if(fragmentBefore!=null){
+                fragmentBefore = mAdapter.getRegisteredFragment(mCurrentPosition + 1);
+                if (fragmentBefore != null) {
                     //fragmentBefore.videoView.setSeekTo(true);
                     fragmentBefore.videoView.setVisibility(View.INVISIBLE);
                 }

@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.example.nayon.nanjicamp.R;
 import com.example.nayon.nanjicamp.adapter.CustomPagerAdapterNaviTreasure;
+import com.example.nayon.nanjicamp.data.Manager;
 
 public class FragmentNaviTreasure extends Fragment {
 
@@ -51,7 +52,7 @@ public class FragmentNaviTreasure extends Fragment {
 
         // Set margin for pages as a negative number, so a part of next and
         // previous pages will be showed
-        mViewPager.setPageMargin(-700);
+        mViewPager.setPageMargin(-(int)(Manager.pageMargin*1.4));
 
         dotCount = mAdapter.getCount();
         dots = new ImageView[dotCount];
@@ -59,8 +60,8 @@ public class FragmentNaviTreasure extends Fragment {
         for(int i = 0; i < dotCount; i++){
             dots[i] = new ImageView(this.getActivity());
             dots[i].setImageResource(R.drawable.icon_indicator);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(38, 38);
-            params.setMargins(14,0,14,0);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(Manager.indicatorSize, Manager.indicatorSize);
+            params.setMargins(Manager.indicatorMargin,0,Manager.indicatorMargin,0);
             indicator.addView(dots[i], params);
         }
         dots[0].setImageResource(R.drawable.icon_indicator_selected);

@@ -5,9 +5,6 @@ package com.example.nayon.nanjicamp.adapter;
  */
 
 import android.app.Activity;
-import android.media.MediaCodecInfo;
-import android.media.MediaPlayer;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -15,7 +12,6 @@ import android.support.v4.view.ViewPager;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.VideoView;
 
 import com.example.nayon.nanjicamp.R;
 import com.example.nayon.nanjicamp.custom_fragment.CustomFragmentPrepare;
@@ -29,6 +25,7 @@ public class CustomPagerAdapterPrepare extends FragmentPagerAdapter implements V
     public final static float BIG_SCALE = 1.0f;
     public final static float SMALL_SCALE = 0.7f;
     public final static float DIFF_SCALE = BIG_SCALE - SMALL_SCALE;
+
 
     private Activity mContext;
     private FragmentManager mFragmentManager;
@@ -50,7 +47,6 @@ public class CustomPagerAdapterPrepare extends FragmentPagerAdapter implements V
             mScale = BIG_SCALE;
         else
             mScale = SMALL_SCALE;
-
         return CustomFragmentPrepare.newInstance(mContext, position, mScale, fragmentNum);
     }
 

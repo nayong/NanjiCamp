@@ -90,7 +90,7 @@ public class FragmentPrepare2 extends Fragment {
 
         // Set margin for pages as a negative number, so a part of next and
         // previous pages will be showed
-        mViewPager.setPageMargin(-500);
+        mViewPager.setPageMargin(-Manager.pageMargin);
 
         dotCount = mAdapter.getCount();
         dots = new ImageView[dotCount];

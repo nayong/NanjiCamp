@@ -22,6 +22,7 @@ public class Manager {
     public static int width = 0;
     public static int indicatorSize = 0;
     public static int indicatorMargin = 0;
+    public static int pageMargin = 0;
 
     public static final int NAVTYPE_HEADER = 0;
     public static final int NAVTYPE_MENU = 1;
@@ -83,6 +84,7 @@ public class Manager {
         height = size.y;
         indicatorSize = width * 38 / 1440;
         indicatorMargin = width * 14 / 1440;
+        pageMargin = width * 500 / 1440;
         Log.w("Nayong || ", "SetDisplaySize width=" + width + "height=" + height);
 
     }

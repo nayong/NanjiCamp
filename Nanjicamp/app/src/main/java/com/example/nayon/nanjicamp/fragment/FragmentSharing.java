@@ -1,7 +1,5 @@
 package com.example.nayon.nanjicamp.fragment;
 
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,17 +7,12 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.VideoView;
 
-import com.example.nayon.nanjicamp.MainActivity;
 import com.example.nayon.nanjicamp.R;
-import com.example.nayon.nanjicamp.adapter.CustomPagerAdapterReserve3;
 import com.example.nayon.nanjicamp.adapter.CustomPagerAdapterShare;
 import com.example.nayon.nanjicamp.data.Manager;
 
@@ -65,7 +58,7 @@ public class FragmentSharing extends Fragment {
 
         mViewPager.setCurrentItem(FIRST_PAGE);
         mViewPager.setOffscreenPageLimit(3);
-        mViewPager.setPageMargin(-600);
+        mViewPager.setPageMargin(-(int)(Manager.pageMargin*1.2));
 
         layClicked.setOnClickListener(new View.OnClickListener() {
             @Override
