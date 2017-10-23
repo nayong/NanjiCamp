@@ -1,0 +1,11 @@
+//메인 fragment matchparent로 바꿈. 원래는 below topbar
+
+달력 오류 해결
+지도 핀치뷰 사이즈 큰 것 넣을 수 있게
+
+에약 페이지 쁠마 건드림
+예약2 아이콘 올림
+쉐어링
+보물찾기 두번 쨰 gif로
+
+dialog는 무조건 wrap_content로 만들 것!!!!
