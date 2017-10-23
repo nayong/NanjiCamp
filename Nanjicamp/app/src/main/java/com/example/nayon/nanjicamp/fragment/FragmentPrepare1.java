@@ -1,27 +1,20 @@
 package com.example.nayon.nanjicamp.fragment;
 
-import android.content.Context;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.nayon.nanjicamp.MainActivity;
 import com.example.nayon.nanjicamp.R;
 import com.example.nayon.nanjicamp.adapter.CustomPagerAdapterPrepare;
-import com.example.nayon.nanjicamp.adapter.CustomPagerAdapterReserve3;
 import com.example.nayon.nanjicamp.custom_fragment.CustomFragmentPrepare;
 import com.example.nayon.nanjicamp.data.Manager;
-
-import static java.sql.Types.NULL;
 
 /**
  * Created by nayon on 2017-05-02.
@@ -104,8 +97,8 @@ public class FragmentPrepare1 extends Fragment {
         for (int i = 0; i < dotCount; i++) {
             dots[i] = new ImageView(this.getActivity());
             dots[i].setImageResource(R.drawable.icon_indicator);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(38, 38);
-            params.setMargins(14, 0, 14, 0);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(Manager.indicatorSize, Manager.indicatorSize);
+            params.setMargins(Manager.indicatorMargin, 0, Manager.indicatorMargin, 0);
             indicator.addView(dots[i], params);
         }
         dots[0].setImageResource(R.drawable.icon_indicator_selected);

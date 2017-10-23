@@ -14,6 +14,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.VideoView;
 
+import com.example.nayon.nanjicamp.data.Manager;
+
 public class LoginActivity extends AppCompatActivity {
 
     VideoView videoView;
@@ -31,9 +33,10 @@ public class LoginActivity extends AppCompatActivity {
         layLogin = (LinearLayout) findViewById(R.id.lay_login_login);
         btnLogin = (ImageButton) findViewById(R.id.btn_login);
 
+        Manager.setDisplaySize(this);
+
         /* for videoView */
-        //TODO video_tmp -> video_login
-        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.video_tmp);
+        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.video_login);
 
         //videoIntro.setMediaController(mc);
         videoView.setVideoURI(uri);

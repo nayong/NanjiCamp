@@ -284,8 +284,8 @@ public class FragmentReserve1 extends Fragment {
         for (int i = 0; i < dotCount; i++) {
             dots[i] = new ImageView(this.getActivity());
             dots[i].setImageResource(R.drawable.icon_indicator);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(38, 38);
-            params.setMargins(14, 0, 14, 0);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(Manager.indicatorSize, Manager.indicatorSize);
+            params.setMargins(Manager.indicatorMargin, 0, Manager.indicatorMargin, 0);
             indicator.addView(dots[i], params);
         }
         dots[0].setImageResource(R.drawable.icon_indicator_selected);

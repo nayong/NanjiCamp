@@ -1,6 +1,11 @@
 package com.example.nayon.nanjicamp.data;
 
+import android.content.Context;
+import android.graphics.Point;
+import android.util.Log;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.example.nayon.nanjicamp.R;
 
@@ -9,9 +14,14 @@ import java.util.ArrayList;
 /**
  * Created by nayon on 2017-04-11.
  */
-public class Manager{
+public class Manager {
 
     View view;
+
+    public static int height = 0;
+    public static int width = 0;
+    public static int indicatorSize = 0;
+    public static int indicatorMargin = 0;
 
     public static final int NAVTYPE_HEADER = 0;
     public static final int NAVTYPE_MENU = 1;
@@ -22,7 +32,6 @@ public class Manager{
     public static final int FRAGMENT_NAVI_TREASURE = 53;
     public static final int FRAGMENT_NAVI_NOTICE = 54;
     public static final int FRAGMENT_NAVI_SETTING = 55;
-
 
     public static final int FRAGMENT_INTRO = 0;
     public static final int FRAGMENT_RESERVE = 1;
@@ -45,7 +54,7 @@ public class Manager{
     public static final int FRAGMENT_PREPARE_3 = 33;
 
 
-    public Manager (View view){
+    public Manager(View view) {
         this.view = view;
     }
 
@@ -64,5 +73,34 @@ public class Manager{
         }
     };
 
+    public static void setDisplaySize(Context context) {
+
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        width = size.x;
+        height = size.y;
+        indicatorSize = width * 38 / 1440;
+        indicatorMargin = width * 14 / 1440;
+        Log.w("Nayong || ", "SetDisplaySize width=" + width + "height=" + height);
+
+    }
+
+//    public int getWidth() {
+//        if (width != 0) {
+//            return width;
+//        }
+//        Log.e("Nayong | Manager.java ", "getWidth ERROR, It is not set");
+//        return -1; //error
+//    }
+//
+//    public int getHeight() {
+//        if (height != 0) {
+//            return height;
+//        }
+//        Log.e("Nayong | Manager.java ", "getHeight ERROR, It is not set");
+//        return -1; //error
+//    }
 
 }

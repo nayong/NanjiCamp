@@ -1,11 +1,9 @@
 package com.example.nayon.nanjicamp;
 
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,11 +11,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
 import android.view.animation.AlphaAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -49,8 +45,6 @@ import com.example.nayon.nanjicamp.navi.FragmentNaviStamp;
 import com.example.nayon.nanjicamp.navi.FragmentNaviTicket;
 import com.example.nayon.nanjicamp.navi.FragmentNaviTreasure;
 import com.example.nayon.nanjicamp.widget.NanumBoldTextView;
-
-import javax.security.auth.login.LoginException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -140,27 +134,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Handler handler = new Handler();
                 txtTopbar.setText("예약하기");
-
-//                //dialog
-//                final ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
-//                progressDialog.setMessage("loading...");
-//                progressDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-//                progressDialog.show();
-//                Handler handler = new Handler();
-//                handler.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        transFragment(Manager.FRAGMENT_RESERVE);
-//                    }
-//                },1000);
-//                handler.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        progressDialog.dismiss();
-//                    }
-//                },2000);
-
-                //
 
                 frameLayout.setVisibility(View.INVISIBLE);
                 progressBar.setVisibility(View.VISIBLE);
@@ -280,24 +253,6 @@ public class MainActivity extends AppCompatActivity {
             case Manager.FRAGMENT_RESERVE:
 
                 fManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-
-//                txtTopbar.setText("예약하기");
-//
-//                btnReserve.setImageResource(R.drawable.icon_main_reserve_clicking);
-//                btnReserve.startAnimation(fadein1);
-//
-////                handler.postDelayed(new Runnable() {
-////                    @Override
-////                    public void run() {
-////                        btnReserve.startAnimation(fadein2);
-////                    }
-////                }, 950);
-//                handler.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        btnReserve.setImageResource(R.drawable.icon_main_reserve_clicked);
-//                    }
-//                }, 500);
                 frag = new FragmentReserve1();
                 break;
 
@@ -468,27 +423,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
-//        Log.e(TAG, "onBackPressed: " + fManager.getBackStackEntryCount());
-//        if (fManager.getBackStackEntryCount() == 1) {
-//            if (position == Manager.FRAGMENT_SHARE && ((FragmentSharing) frag).cardClicked != 0) {
-//                FragmentSharing.backClicked.setVisibility(View.INVISIBLE);
-//                FragmentSharing.layClicked.setVisibility(View.INVISIBLE);
-//                FragmentSharing.cardClicked = 0;
-//                return;
-//            } else if (position == Manager.FRAGMENT_INTRO) {
-//                this.finishAffinity();
-//                return;
-//            }
-//            Log.e(TAG, "onBackPressed: go to intro");
-//            fManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-//            this.position = Manager.FRAGMENT_INTRO;
-//            frag = new FragmentIntro();
-////            fManager = getSupportFragmentManager();
-//            fTrans = fManager.beginTransaction().addToBackStack(frag.toString());
-//            fTrans.add(R.id.fragment_main, frag);
-//            fTrans.commit();
-
         if (position == Manager.FRAGMENT_RESERVE_2) {
             transFragment(Manager.FRAGMENT_RESERVE);
         } else if (position == Manager.FRAGMENT_RESERVE_3) {

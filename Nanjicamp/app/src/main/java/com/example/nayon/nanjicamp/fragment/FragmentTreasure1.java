@@ -1,7 +1,5 @@
 package com.example.nayon.nanjicamp.fragment;
 
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,15 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.VideoView;
 
 import com.example.nayon.nanjicamp.MainActivity;
 import com.example.nayon.nanjicamp.R;
-import com.example.nayon.nanjicamp.adapter.CustomPagerAdapterNaviTreasure;
 import com.example.nayon.nanjicamp.adapter.CustomPagerAdapterTreasure;
 import com.example.nayon.nanjicamp.data.Manager;
-import com.example.nayon.nanjicamp.widget.NanumBoldTextView;
 
 /**
  * Created by nayon on 2017-04-10.
@@ -64,8 +58,8 @@ public class FragmentTreasure1 extends Fragment {
         for(int i = 0; i < dotCount; i++){
             dots[i] = new ImageView(this.getActivity());
             dots[i].setImageResource(R.drawable.icon_indicator);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(38, 38);
-            params.setMargins(14,0,14,0);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(Manager.indicatorSize, Manager.indicatorSize);
+            params.setMargins(Manager.indicatorMargin, 0, Manager.indicatorMargin, 0);
             indicator.addView(dots[i], params);
         }
         dots[0].setImageResource(R.drawable.icon_indicator_selected);
